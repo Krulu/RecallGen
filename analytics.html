@@ -36,9 +36,9 @@
             </div>
             <nav>
                 <a href="dashboard.html" class="nav-item"><i class="fas fa-home"></i> <span>Dashboard</span></a>
-                <a href="quiz.html"class="nav-item"><i class="fas fa-brain"></i> <span>Create Quiz</span></a>
-                <a href="analytics.html"class="nav-item active"><i class="fas fa-chart-bar"></i> <span>Analytics</span></a>
-                <a href="settings.html"class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
+                <a href="quiz.html" class="nav-item"><i class="fas fa-brain"></i> <span>Create Quiz</span></a>
+                <a href="analytics.html" class="nav-item active"><i class="fas fa-chart-bar"></i> <span>Analytics</span></a>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
             </nav>
             <button id="logout-btn" class="logout-link">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -64,6 +64,12 @@
                     </div>
                 </div>
             </header>
+
+            <!-- MOTIVATIONAL BANNER -->
+            <div class="motivational-banner" id="motivational-banner" style="display:none;">
+                <div class="motivational-icon"><i class="fas fa-bolt"></i></div>
+                <p id="motivational-text">Keep it up — consistency is key!</p>
+            </div>
 
             <!-- STAT CARDS ROW -->
             <div class="stat-cards">
@@ -93,6 +99,13 @@
                     <div class="stat-info">
                         <div class="stat-num" id="s-trend">—</div>
                         <div class="stat-lbl">Score Trend</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-num" id="s-time">—</div>
+                        <div class="stat-lbl">Time Studied</div>
                     </div>
                 </div>
             </div>
