@@ -166,6 +166,29 @@ function updateStatCards(data) {
     if (trend.startsWith('+')) trendEl.style.color = '#2ed573';
     else if (trend.startsWith('-')) trendEl.style.color = '#ff4757';
     else trendEl.style.color = '';
+
+    // Time studied
+    const totalMins = data.reduce((s, r) => s + (r.time_taken || 0), 0);
+    const timeDisplay = totalMins >= 60
+        ? `${(totalMins / 60).toFixed(1)}h`
+        : totalMins > 0 ? `${totalMins}m` : '—';
+    document.getElementById('s-time').textContent = timeDisplay;
+
+    // Motivational banner
+    const banner = document.getElementById('motivational-banner');
+    const msgEl  = document.getElementById('motivational-text');
+    if (total === 0) {
+        banner.style.display = 'none';
+    } else {
+        banner.style.display = 'flex';
+        if (trend.startsWith('+')) {
+            msgEl.innerHTML = `<strong>You're on a roll!</strong> Your score improved by ${trend} this period. Keep it up!`;
+        } else if (trend.startsWith('-')) {
+            msgEl.innerHTML = `<strong>Don't give up!</strong> Every quiz gets you closer. Keep practicing!`;
+        } else {
+            msgEl.innerHTML = `<strong>Stay consistent!</strong> Complete more quizzes to track your progress.`;
+        }
+    }
 }
 
 function calcStreak() {
